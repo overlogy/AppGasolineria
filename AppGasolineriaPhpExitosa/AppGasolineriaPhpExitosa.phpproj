@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>AppGasolineriaPhpExitosa</Name>
+    <ProjectGuid>cda097cf-9f87-430b-bfac-c6cc32ba29bb</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>AppGasolineriaPhpExitosa</AssemblyName>
+    <SaveServerSettingsInUserFile>false</SaveServerSettingsInUserFile>
+    <Runtime>PHP</Runtime>
+    <RuntimeVersion>5.6</RuntimeVersion>
+    <EnvName>IISExpress</EnvName>
+    <PHPDevHostName>localhost</PHPDevHostName>
+    <PHPDevAutoPort>true</PHPDevAutoPort>
+    <IISProjectUrl>http://localhost:23667/AppGasolineria</IISProjectUrl>
+    <IISExpressSslEnabled>false</IISExpressSslEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="index.php" />
+    <Compile Include="php\init.php" />
+    <Compile Include="php\Logic\ListadoVentasLogic.php" />
+    <Compile Include="Views\ListadoVentas\index.php" />
+    <Compile Include="Views\ListadoVentas\Modals\Imprimir.php" />
+    <Compile Include="Views\ListadoVentas\Modals\RncEmpresa.php" />
+    <Compile Include="Views\ListadoVentas\Modals\RncTarjeta.php" />
+    <Compile Include="Views\ListadoVentas\Modals\TipoComprobante.php" />
+    <Compile Include="Views\ListadoVentas\Modals\TipoPago.php" />
+    <Compile Include="Views\ListadoVentas\Modals\TipoTicket.php" />
+    <Compile Include="Views\Shared\cierre.php" />
+    <Compile Include="Views\Shared\header.php" />
+    <Compile Include="Views\Shared\menu.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
+    <Folder Include="assets\css\" />
+    <Folder Include="assets\css\vendor\" />
+    <Folder Include="assets\fonts\" />
+    <Folder Include="assets\fonts\fa\" />
+    <Folder Include="assets\fonts\linear\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="assets\js\" />
+    <Folder Include="assets\js\bootstrap\" />
+    <Folder Include="assets\js\jquery\" />
+    <Folder Include="assets\js\plugins\" />
+    <Folder Include="assets\js\plugins\chartist\" />
+    <Folder Include="assets\js\plugins\jquery-easypiechart\" />
+    <Folder Include="assets\js\plugins\jquery-slimscroll\" />
+    <Folder Include="assets\js\plugins\toastr\" />
+    <Folder Include="Content\" />
+    <Folder Include="Content\images\" />
+    <Folder Include="Content\images\ios-style-checkboxes\" />
+    <Folder Include="Content\images\iphone-style-checkboxes\" />
+    <Folder Include="php\" />
+    <Folder Include="php\Logic\" />
+    <Folder Include="scripts\" />
+    <Folder Include="scripts\Logic\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\ListadoVentas\" />
+    <Folder Include="Views\ListadoVentas\Modals\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\main.css" />
+    <Content Include="assets\css\main.min.css" />
+    <Content Include="assets\css\vendor\icon-sets.css" />
+    <Content Include="assets\fonts\fa\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fa\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\fa\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fa\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fa\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\fonts\FontAwesome.otf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\fonts\linear\Linearicons-Free.eot" />
+    <Content Include="assets\fonts\linear\Linearicons-Free.svg" />
+    <Content Include="assets\fonts\linear\Linearicons-Free.ttf" />
+    <Content Include="assets\fonts\linear\Linearicons-Free.woff" />
+    <Content Include="assets\fonts\linear\Linearicons-Free.woff2" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\gas-station.png" />
+    <Content Include="assets\img\locked.png" />
+    <Content Include="assets\img\login-bg.jpg" />
+    <Content Include="assets\img\logo-dark.png" />
+    <Content Include="assets\img\logo.png" />
+    <Content Include="assets\img\profile-bg.png" />
+    <Content Include="assets\img\user-medium.png" />
+    <Content Include="assets\img\user.png" />
+    <Content Include="assets\img\user1.png" />
+    <Content Include="assets\img\user2.png" />
+    <Content Include="assets\img\user3.png" />
+    <Content Include="assets\img\user4.png" />
+    <Content Include="assets\img\user5.png" />
+    <Content Include="assets\js\bootstrap\bootstrap.js" />
+    <Content Include="assets\js\bootstrap\bootstrap.min.js" />
+    <Content Include="assets\js\jquery\jquery-2.1.0.js" />
+    <Content Include="assets\js\jquery\jquery-2.1.0.min.js" />
+    <Content Include="assets\js\klorofil.js" />
+    <Content Include="assets\js\klorofil.min.js" />
+    <Content Include="assets\js\plugins\chartist\chartist.js" />
+    <Content Include="assets\js\plugins\chartist\chartist.min.js" />
+    <Content Include="assets\js\plugins\jquery-easypiechart\jquery.easypiechart.min.js" />
+    <Content Include="assets\js\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="assets\js\plugins\jquery-slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\js\plugins\toastr\toastr.js" />
+    <Content Include="assets\js\plugins\toastr\toastr.min.js" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
+    <Content Include="Content\gas-pump.ico" />
+    <Content Include="Content\images\bg.png" />
+    <Content Include="Content\images\calendar.png" />
+    <Content Include="Content\images\gas-pump.ico" />
+    <Content Include="Content\images\gas-station.png" />
+    <Content Include="Content\images\i1.png" />
+    <Content Include="Content\images\ios-style-checkboxes\off.png" />
+    <Content Include="Content\images\ios-style-checkboxes\on.png" />
+    <Content Include="Content\images\ios-style-checkboxes\slider.png" />
+    <Content Include="Content\images\ios-style-checkboxes\slider_center.png" />
+    <Content Include="Content\images\ios-style-checkboxes\slider_left.png" />
+    <Content Include="Content\images\ios-style-checkboxes\slider_right.png" />
+    <Content Include="Content\images\iphone-style-checkboxes\off.png" />
+    <Content Include="Content\images\iphone-style-checkboxes\on.png" />
+    <Content Include="Content\images\iphone-style-checkboxes\slider.png" />
+    <Content Include="Content\images\iphone-style-checkboxes\slider_center.png" />
+    <Content Include="Content\images\iphone-style-checkboxes\slider_left.png" />
+    <Content Include="Content\images\iphone-style-checkboxes\slider_right.png" />
+    <Content Include="Content\login_css.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\sweetalert.css" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="scripts\chosen.jquery.js" />
+    <Content Include="scripts\easyResponsiveTabs.js" />
+    <Content Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\jquery-1.10.2.js" />
+    <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\jquery-1.10.2.min.map" />
+    <Content Include="scripts\Logic\configuracion_Tanques.js" />
+    <Content Include="scripts\Logic\consulta_ventas.js" />
+    <Content Include="scripts\Logic\estado_tanques.js" />
+    <Content Include="scripts\Logic\listado_ventas.js" />
+    <Content Include="scripts\Logic\login.js" />
+    <Content Include="scripts\Logic\modulos.js" />
+    <Content Include="scripts\Logic\pumps.js" />
+    <Content Include="scripts\Logic\reportes.js" />
+    <Content Include="scripts\Logic\TanksVolume.js" />
+    <Content Include="scripts\Logic\usuarios.js" />
+    <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\sweetalert.min.js" />
+  </ItemGroup>
+</Project>
