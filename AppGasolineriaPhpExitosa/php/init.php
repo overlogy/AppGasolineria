@@ -8,7 +8,7 @@
     define("PGSQL_PASSWORD","ssfpostgres");
 
     //Constantes de SQL SERVER
-	define("SQL_HOST","DESKTOP-5J3MVSG");
+	define("SQL_HOST","POS00001\SQLEXPRESS");
     define("SQL_DB","BD_RNC");
     define("SQL_USER","sa");
     define("SQL_PASSWORD","edward");

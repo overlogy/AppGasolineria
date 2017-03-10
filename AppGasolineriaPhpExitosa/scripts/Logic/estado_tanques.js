@@ -4,8 +4,11 @@
         $('#divError').addClass('hidden');
         $('#MensajeError').val('');
         $.ajax({
-            type: 'GET',
-            url: $('#ruta_Listar').val(),            
+            type: 'POST',
+            url: '../../php/Logic/EstadoTanquesLogic.php',
+            data: {
+                'accion': 'Listar'
+            }
         }).done(function (answer) {
             var data = JSON.parse(answer);
             var json = data.json;//Obtiene los json 
@@ -136,6 +139,7 @@
             
             $(".Diferencia").prop('disabled', true);
             for (var i = 0; i < answer.length; i++) {
+                console.log(answer);
                 var id = answer[i].id;
                 var combustible = answer[i].fuel;
                 var graficoId = "grafico" + id;
@@ -166,10 +170,11 @@
             $('#thVolume' + id_tanque).removeClass('has-error');
             $.ajax({
                 type: 'POST',
-                url: $('#ruta_AddVolume').val(),
+                url: '../../php/Logic/EstadoTanquesLogic.php',
                 data:
                     {
-                        'volumen': volumen,
+                        'accion': 'addvol',
+                        'volumen':volumen,
                         'id': id_tanque
                     }
             }).done(function (respuesta) {
@@ -243,7 +248,6 @@
                 ]
             }]
         };
-        console.log(opciones);
         return opciones;
     }
 });

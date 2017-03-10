@@ -27,6 +27,7 @@
   <ItemGroup>
     <Compile Include="index.php" />
     <Compile Include="php\init.php" />
+    <Compile Include="php\Logic\EstadoTanquesLogic.php" />
     <Compile Include="php\Logic\ListadoVentasLogic.php" />
     <Compile Include="Views\ListadoVentas\index.php" />
     <Compile Include="Views\ListadoVentas\Modals\Imprimir.php" />
@@ -66,6 +67,7 @@
     <Folder Include="Views\" />
     <Folder Include="Views\ListadoVentas\" />
     <Folder Include="Views\ListadoVentas\Modals\" />
+    <Folder Include="Views\EstadoTanques\" />
     <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
@@ -168,5 +170,6 @@
     <Content Include="scripts\Logic\usuarios.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\sweetalert.min.js" />
+    <Content Include="Views\EstadoTanques\index.php" />
   </ItemGroup>
 </Project>
