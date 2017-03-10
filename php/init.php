@@ -35,7 +35,7 @@
 			return $rpta;
 		}
 		public function GetData($conexion,$consulta,$parametros=null){
-			$data;
+			$data="";
 			try {
 				$data['error']="";
 				$statement=$conexion->prepare($consulta);
@@ -47,7 +47,7 @@
 			return $data;
 		}
 		public function GetJsonData($conexion,$consulta,$parametros=null){
-			$data;
+			$data="";
 			try {
 				$data['error']="";
 				$statement=$conexion->prepare($consulta);

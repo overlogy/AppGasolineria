@@ -108,56 +108,48 @@
 						$i++;
 
 						//Query para guardar las facturas con comprobantes en al base de datos   
-						$querySave="INSERT INTO ssf_facturas_comprobantes(ncf,cliente,rnc,lado,manguera,combustible,volumen,monto,fecha,hora,tarjeta,placa_vehiculo,fecha_venta,tipo_ncf,credito)
-	                    VALUES(:ncf,:cliente,:rnc,:lado,:manguera,:combustible,:volumen,:monto,:fecha,:hora,:tarjeta,:placa_vehiculo,:fecha_venta,:tipo_ncf,:credito)";   
+						$querySave="INSERT INTO ssf_facturas_comprobantes(ncf,cliente,rnc,lado,manguera,combustible,volumen,monto,fecha,hora,user,tarjeta,placa_vehiculo,";
+	                    $querySave.="fecha_venta,tipo_ncf,credito) VALUES(:ncf,:cliente,:rnc,:lado,:manguera,:combustible,:volumen,:monto,:fecha,:hora,:user,:tarjeta,:placa_vehiculo,";
+	                    $querySave.=":fecha_venta,:tipo_ncf,:credito)";
 
 	                    $queryIncrement="UPDATE ssf_ncf SET consecutivo=:consecutivo WHERE prefijo=:prefijo";
 
-	                    $statementSave=$conexionPgsql->prepare($querySave);
-	                    $statementIncrement=$conexionPgsql->prepare($queryIncrement);
+                    	if($conexionbd->Ejecutar($conexionPgsql,$querySave,array(
+                    		':ncf'=>$NCF,
+                    			':cliente'=>$_POST['cliente'],
+                    			':rnc'=>$_POST['rnc'],
+             					':lado'=>$_POST['lado'],
+             					':manguera'=>$_POST['manguera'],
+             					':combustible'=>$_POST['combustible'],
+             					':volumen'=>$_POST['volumen'],
+             					':monto'=>$_POST['monto'],
+             					':fecha'=>$_POST['fecha'],
+             					':hora'=>$_POST['hora'],
+             					':tarjeta'=>$numeroTarjeta,
+             					':user'=>'admin',
+             					':placa_vehiculo'=>$placa,
+             					':fecha_venta'=>$_POST['fecha_v'],
+             					':tipo_ncf'=>$_POST['tipo_comprobante'],
+             					':credito'=>''
+                    		))=="SI"){
 
-	                    try {
-	                    	$conexionPgsql->beginTransaction();
-
-	                    	$statementSave->execute(
-	                    		array(
-	                    			':ncf'=>$NCF,
-	                    			':cliente'=>$_POST['cliente'],
-	                    			':rnc'=>$_POST['rnc'],
-	             					':lado'=>$_POST['lado'],
-	             					':manguera'=>$_POST['manguera'],
-	             					':combustible'=>$_POST['combustible'],
-	             					':volumen'=>$_POST['volumen'],
-	             					':monto'=>$_POST['monto'],
-	             					':fecha'=>$_POST['fecha'],
-	             					':hora'=>$_POST['hora'],
-	             					':tarjeta'=>$numeroTarjeta,
-	             					':placa_vehiculo'=>$placa,
-	             					':fecha_venta'=>$_POST['fecha_v'],
-	             					':tipo_ncf'=>$_POST['tipo_comprobante'],
-	             					':credito'=>''
-	                    		)
-	                    	);
-
-	                    	$statementIncrement->execute(
-	                    		array(
+                    		$conexionbd->Ejecutar($conexionPgsql,$queryIncrement,array(
 	                    			':consecutivo'=>$i,
 	                    			':prefijo'=>$prefijo
-	                    		)
-	                    	);
-	                    	$conexionPgsql->commit();
-	                    	$rpta['respuesta']="Correcto";
+	                    		));
+                    	
+                    		$rpta['respuesta']="Correcto";
 							$rpta['ncf'] = $NCF;
 				            $rpta['tipoComprobante'] = $_POST['tipo_comprobante'];
 				            $rpta['sFormaPago'] = (int)$_POST['forma_pago'] == 1 ? "Efectivo" : "Tarjeta";
 				            $rpta['NumeroTarjeta'] = $numeroTarjeta;
 				            $rpta['Placa'] = $placa;
-	                    } catch (Exception $e) {
-	                    	$rpta['respuesta']="No";
-	                    	$conexionPgsql->rollBack();
-	                    }    
+                    	}else{
+                    		$rpta['respuesta']="No";
+                    	}
+	                      
 					}else{
-						$rpta['respuesta'] = "NCF_Not_19";
+						$rpta['respuesta'] = "NCF_Not_19";   
 					}
 				} catch (Exception $e) {
 					$rpta['respuesta']=$e->getMessage();

@@ -469,6 +469,8 @@
                 }
             }).done(function (respuesta) {
                 var data = JSON.parse(respuesta);
+                console.log(data);
+                return;
                 $('#txtRespuesta').val(data.respuesta);
 
                 var answer = $('#txtRespuesta').val();
